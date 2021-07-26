@@ -1,0 +1,34 @@
+// mixin variable
+@mixin grid-columns {
+  display: grid;
+  grid-template-columns:
+    minmax(1rem, 10%)
+    200px
+    minmax(20rem, 45ch)
+    minmax(1rem, 3fr)
+    max-content;
+}
+
+// navigation section
+@mixin flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// navigation section
+@mixin flexspace-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// main section
+@mixin btn {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  font-weight: $fw-bold;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

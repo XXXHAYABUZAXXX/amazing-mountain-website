@@ -1,0 +1,149 @@
+.navigation {
+  background-color: $clr-light;
+  text-align: center;
+
+  // responsive
+  @media (min-width: 960px) {
+    // mixin variable
+    @include grid-columns();
+
+    align-items: center;
+  }
+
+  &__logo,
+  &__list,
+  &__weather {
+    // responsive
+    @media (min-width: 960px) {
+      grid-row: 1;
+    }
+  }
+
+  &__logo {
+    padding-top: 1rem;
+
+    // responsive
+    @media (min-width: 960px) {
+      grid-column: 2;
+      padding-top: 0;
+      text-align: left;
+    }
+    & a {
+      text-transform: uppercase;
+      font-weight: $fw-black;
+      font-size: 18px;
+      color: $clr-dark;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: $fw-bold;
+    letter-spacing: 1px;
+
+    &--item {
+      &--link {
+        color: $clr-dark;
+        &:hover {
+          color: $clr-primary;
+        }
+      }
+    }
+
+    // responsive
+    @media (min-width: 700px) {
+      max-width: 50rem;
+      margin: 0 auto;
+    }
+
+    // responsive
+    @media (min-width: 960px) {
+      grid-column: 3 / 5;
+      padding: 0;
+      justify-content: right;
+      gap: 3rem;
+      margin-right: 3rem;
+    }
+  }
+
+  &__weather {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    background-color: $clr-dark;
+    color: $clr-light;
+
+    // responsive
+    @media (min-width: 700px) {
+      width: max-content;
+      margin: 0 auto -2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    // responsive
+    @media (min-width: 700px) {
+      width: max-content;
+      margin: 0 auto -2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    // responsive
+    @media (min-width: 960px) {
+      grid-column: -2 / -1;
+      justify-self: end;
+      margin: auto;
+    }
+
+    &--icon {
+      grid-row: span 2;
+      background-color: $clr-primary;
+      padding: 0.5rem;
+
+      // flexcenter
+      @include flexcenter();
+    }
+
+    &--info {
+      margin-left: 0.75rem;
+      margin-right: 0.75rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: $fw-bold;
+      letter-spacing: 1px;
+
+      // flex space between
+      @include flexspace-between();
+
+      &:first-of-type {
+        margin-top: 0.5rem;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          background-color: $clr-light;
+          bottom: 0;
+        }
+      }
+
+      &:last-of-type {
+        margin-bottom: 0.5rem;
+      }
+
+      & span {
+        color: $clr-light;
+        font-size: 1rem;
+        text-transform: lowercase;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.content {
+  background-image: url("/images/background-image.jpg");
+  background-size: cover;
+  padding: 3rem 1rem 5rem;
+
+  // responsive
+  @media (min-width: 700px) {
+    // mixin variable
+    @include grid-columns();
+
+    padding-left: 0;
+    padding-right: 0;
+    background-position: left bottom;
+  }
+
+  // reponsive
+  @media (min-width: 1200px) {
+    background-position: center right;
+  }
+
+  // direct child
+  & > * {
+    // responsive
+    @media (min-width: 700px) {
+      grid-column: 2 / 4;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: $fw-black;
+    line-height: 1;
+    padding-bottom: 2rem;
+  }
+
+  &__info {
+    padding-bottom: 4rem;
+  }
+
+  &__button {
+    display: flex;
+
+    // responsive
+    @media (max-width: 450px) {
+      flex-direction: column;
+    }
+  }
+
+  // after element
+  &__btn + &__btn {
+    margin-left: 1rem;
+  }
+
+  &__btn + &__btn:last-of-type {
+    // responsive
+    @media (max-width: 450px) {
+      margin-top: 1rem;
+      margin-left: 0;
+    }
+  }
+
+  &__btn:first-of-type {
+    background-color: $clr-primary;
+    color: $clr-light;
+
+    @include btn();
+
+    &:hover {
+      background-color: $clr-dark;
+    }
+  }
+
+  &__btn:last-of-type {
+    outline: 3px solid $clr-primary;
+    outline-offset: -3px;
+    color: $clr-primary;
+
+    @include btn();
+
+    &:hover {
+      background-color: $clr-dark;
+      outline-color: $clr-dark;
+      color: $clr-light;
+    }
+  }
+}

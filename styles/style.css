@@ -1,0 +1,313 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.125rem;
+  color: #0c0e36;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.navigation {
+  background-color: #ffffff;
+  text-align: center;
+}
+
+@media (min-width: 960px) {
+  .navigation {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: minmax(1rem, 10%) 200px minmax(20rem, 45ch) minmax(1rem, 3fr) max-content;
+        grid-template-columns: minmax(1rem, 10%) 200px minmax(20rem, 45ch) minmax(1rem, 3fr) -webkit-max-content;
+        grid-template-columns: minmax(1rem, 10%) 200px minmax(20rem, 45ch) minmax(1rem, 3fr) max-content;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (min-width: 960px) {
+  .navigation__logo, .navigation__list, .navigation__weather {
+    -ms-grid-row: 1;
+    grid-row: 1;
+  }
+}
+
+.navigation__logo {
+  padding-top: 1rem;
+}
+
+@media (min-width: 960px) {
+  .navigation__logo {
+    -ms-grid-column: 2;
+    grid-column: 2;
+    padding-top: 0;
+    text-align: left;
+  }
+}
+
+.navigation__logo a {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 18px;
+  color: #0c0e36;
+}
+
+.navigation__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navigation__list--item--link {
+  color: #0c0e36;
+}
+
+.navigation__list--item--link:hover {
+  color: #f70058;
+}
+
+@media (min-width: 700px) {
+  .navigation__list {
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 960px) {
+  .navigation__list {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    grid-column: 3 / 5;
+    padding: 0;
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+    gap: 3rem;
+    margin-right: 3rem;
+  }
+}
+
+.navigation__weather {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: min-content 1fr;
+      grid-template-columns: -webkit-min-content 1fr;
+      grid-template-columns: min-content 1fr;
+  background-color: #0c0e36;
+  color: #ffffff;
+}
+
+@media (min-width: 700px) {
+  .navigation__weather {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    margin: 0 auto -2rem;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 700px) {
+  .navigation__weather {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    margin: 0 auto -2rem;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 960px) {
+  .navigation__weather {
+    grid-column: -2 / -1;
+    -ms-grid-column-align: end;
+        justify-self: end;
+    margin: auto;
+  }
+}
+
+.navigation__weather--icon {
+  grid-row: span 2;
+  background-color: #f70058;
+  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navigation__weather--info {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navigation__weather--info:first-of-type {
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+.navigation__weather--info:first-of-type::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: #ffffff;
+  bottom: 0;
+}
+
+.navigation__weather--info:last-of-type {
+  margin-bottom: 0.5rem;
+}
+
+.navigation__weather--info span {
+  color: #ffffff;
+  font-size: 1rem;
+  text-transform: lowercase;
+  margin-left: 0.5rem;
+}
+
+.content {
+  background-image: url("/images/background-image.jpg");
+  background-size: cover;
+  padding: 3rem 1rem 5rem;
+}
+
+@media (min-width: 700px) {
+  .content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: minmax(1rem, 10%) 200px minmax(20rem, 45ch) minmax(1rem, 3fr) max-content;
+        grid-template-columns: minmax(1rem, 10%) 200px minmax(20rem, 45ch) minmax(1rem, 3fr) -webkit-max-content;
+        grid-template-columns: minmax(1rem, 10%) 200px minmax(20rem, 45ch) minmax(1rem, 3fr) max-content;
+    padding-left: 0;
+    padding-right: 0;
+    background-position: left bottom;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content {
+    background-position: center right;
+  }
+}
+
+@media (min-width: 700px) {
+  .content > * {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2 / 4;
+  }
+}
+
+.content__title {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+  padding-bottom: 2rem;
+}
+
+.content__info {
+  padding-bottom: 4rem;
+}
+
+.content__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 450px) {
+  .content__button {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.content__btn + .content__btn {
+  margin-left: 1rem;
+}
+
+@media (max-width: 450px) {
+  .content__btn + .content__btn:last-of-type {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+}
+
+.content__btn:first-of-type {
+  background-color: #f70058;
+  color: #ffffff;
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.content__btn:first-of-type:hover {
+  background-color: #0c0e36;
+}
+
+.content__btn:last-of-type {
+  outline: 3px solid #f70058;
+  outline-offset: -3px;
+  color: #f70058;
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.content__btn:last-of-type:hover {
+  background-color: #0c0e36;
+  outline-color: #0c0e36;
+  color: #ffffff;
+}
+/*# sourceMappingURL=style.css.map */
